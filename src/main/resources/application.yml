@@ -1,0 +1,11 @@
+spring:
+  name: demo-security
+  jpa:
+    show-sql: true
+    # hibernate:
+    # ddl-auto: update
+  datasource:
+    driverClassName:
+    url: jdbc:sqlserver://localhost:1433;encrypt=true;trustServerCertificate=true;databaseName=demo-security
+    username: sa
+    password: ${DB_PASSWORD}

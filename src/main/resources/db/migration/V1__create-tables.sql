@@ -1,0 +1,16 @@
+CREATE TABLE users (
+    id BIGINT IDENTITY PRIMARY KEY,
+    name NVARCHAR(255) NOT NULL,
+    email NVARCHAR(255) NOT NULL UNIQUE,
+    password NVARCHAR(255) NOT NULL,
+    role NVARCHAR(50) NOT NULL,
+    active BIT NOT NULL
+);
+
+CREATE TABLE refresh_token (
+    id BIGINT IDENTITY PRIMARY KEY,
+    token NVARCHAR(MAX) NOT NULL,
+    username NVARCHAR(255) NOT NULL,
+    date_created DATETIME2 NOT NULL,
+    FOREIGN KEY (username) REFERENCES Users(email)
+);
