@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 @Table(name = "refresh_token")
 data class RefreshToken(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int? = null,
     @Column(name = "token", unique = true)
     val token: String,
